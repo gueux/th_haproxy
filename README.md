@@ -11,19 +11,6 @@ Requirements
 
 Attributes
 ----------
-default['th_haproxy']['install_method'] = "source"
-default['th_haproxy']['source']['version'] = "1.5.14"
-default['th_haproxy']['source']['url'] = "http://www.haproxy.org/download/1.5/src/haproxy-1.5.14.tar.gz"
-default['th_haproxy']['source']['checksum'] = "9565dd38649064d0350a2883fa81ccfe92eb17dcda457ebdc01535e1ab0c8f99"
-default['th_haproxy']['source']['prefix'] = "/"
-default['th_haproxy']['source']['use_openssl'] = true
-default['th_haproxy']['conf_dir'] = "/etc/haproxy/"
-default['th_haproxy']['main_conf'] = "/etc/haproxy/haproxy.cfg"
-default['th_haproxy']['defaults_mode'] = "http"
-default['th_haproxy']['defaults_retries'] = 3
-default['th_haproxy']['balance_alghoritm'] = "roundrobin" 
-
-e.g.
 #### th_haproxy::default
 <table>
   <tr>
