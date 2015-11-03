@@ -1,0 +1,15 @@
+global
+  log 127.0.0.1   local0
+  log 127.0.0.1   local1 notice
+  #log loghost    local0 info
+  maxconn <%= node['haproxy']['global_max_connections'] %>
+  #debug
+  #quiet
+  user <%= node['haproxy']['user'] %>
+  group <%= node['haproxy']['group'] %>
+<% if node['haproxy']['enable_stats_socket'] -%>
+  stats socket <%= node['haproxy']['stats_socket_path'] %> user <%= node['haproxy']['stats_socket_user'] %> group <%= node['haproxy']['stats_socket_group'] %>
+<% end -%>
+<% node['haproxy']['global_options'].sort.each do |option, value| %>
+  <%= option %> <%= value %>
+<% end %>
